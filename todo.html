@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        main h1{
+            font-family: fantasy;
+        }
+        main{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: url(bg4.jpeg);
+            /* background-color: rgb(252, 219, 248); */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        section{
+            margin-top:12%;
+            height:80% ;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: start;
+            align-items:center;
+            
+        }
+        h1{ 
+            font-size: 40px;
+            margin-top: 30px;
+        }
+        div button{
+            border-radius: 13px;
+            font-size: 17px;
+            padding: 6px;
+        }
+        div input{
+            border-radius: 13px;
+            font-size: 17px;
+            padding: 6px;
+            width: 300px;
+        }
+        ul{
+            margin-top: 2%;
+            border-radius: 20px;
+            height: 470px;
+            width: 500px;
+        background-color: rgb(253, 209, 222);
+        }
+        
+        li{ 
+             
+            margin-bottom: 5px;
+            font-size:26px;
+        }
+        li button {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+        div ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items:center;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+        <h1><b>TO DO LIST</b></h1>
+        <br>
+    <div>
+        <input type="text">
+        <button onclick="addtodo()">Add</button>
+    </div>
+     <div>
+        <ul>
+
+       </ul>
+     </div>
+    </section>
+    </main>
+
+    <script>
+        function addtodo(){
+        let input=document.querySelector("input");
+        if(input.value==""){
+                alert("mat kar lala mat kar ☠️,kyunki tere se na ho payega‼️");
+                return ;
+            }
+        let li=document.createElement("li");
+        li.innerHTML=`${input.value}. <button onclick="remove(this)">Delete</button>`;
+        let ul=document.querySelector("ul");
+        ul.prepend(li)
+        input.value="";
+        
+        }
+        function remove(element){
+            element.parentElement.remove();
+        }
+    </script>
+  
+</body>
+</html>
